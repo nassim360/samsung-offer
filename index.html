@@ -1,1 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇳🇬 WIN Samsung S25 - Nigeria Only!</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background: #f0f2f5; 
+            margin: 0; 
+            padding: 20px; 
+            color: #333;
+        }
+        .container { 
+            max-width: 500px; 
+            margin: 0 auto; 
+            background: white; 
+            padding: 25px; 
+            border-radius: 15px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 { 
+            color: #e63946; 
+            font-size: 24px; 
+            margin-bottom: 15px;
+        }
+        .price-tag {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .old-price { 
+            text-decoration: line-through; 
+            color: #777; 
+        }
+        .new-price { 
+            color: #e63946; 
+            font-weight: bold; 
+            font-size: 22px;
+            display: block;
+            margin-top: 5px;
+        }
+        .phone-img { 
+            width: 100%; 
+            max-width: 280px; 
+            margin: 20px auto;
+            display: block;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .cta-button {
+            display: block;
+            background: linear-gradient(to right, #e63946, #c1121f);
+            color: white;
+            text-align: center;
+            padding: 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 25px 0;
+            font-size: 20px;
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+            transition: all 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(230, 57, 70, 0.6);
+        }
+        .timer {
+            color: #e63946;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 15px 0;
+        }
+        .winner-count {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 CONGRATULATIONS! 🎉</h1>
+        <p>You've been selected for a <strong>Samsung Galaxy S25</strong> giveaway!</p>
+        
+        <div class="price-tag">
+            <span class="old-price">Original Price: ₦750,000</span>
+            <span class="new-price">YOUR PRICE: FREE!</span>
+        </div>
+        
+        <img src="https://i.ibb.co/zLtMpxD/samsung-s25.png" alt="Samsung Galaxy S25" class="phone-img">
+        
+        <div class="winner-count">
+            <strong>📢 14,892 people entered today.</strong> Only <span style="color:#e63946;">2</span> phones left!
+        </div>
+        
+        <div class="timer">⏳ <span id="countdown">02:00</span> left to claim!</div>
+        
+        <!-- UPDATED CTA LINK (ABSOLUTE PATH) -->
+        <a href="https://yourusername.github.io/your-repo-name/claim" class="cta-button">
+            🇳🇬 CLICK TO CLAIM YOUR PHONE NOW 🇳🇬
+        </a>
+        
+        <p><small>100% free entry • MTN/Airtel/Glo users eligible</small></p>
+    </div>
 
+    <script>
+        // 2-minute countdown
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = minutes + ":" + seconds;
+                if (--timer < 0) timer = duration;
+            }, 1000);
+        }
+        window.onload = function () {
+            const twoMinutes = 60 * 2,
+                display = document.querySelector('#countdown');
+            startTimer(twoMinutes, display);
+        };
+        
+        // Animated counter
+        let counter = 14892;
+        setInterval(function() {
+            counter++;
+            document.querySelector('.winner-count strong').textContent = counter.toLocaleString();
+        }, 3000);
+
+        // BULLETPROOF REDIRECT (Works on GitHub Pages)
+        if(window.location.pathname.toLowerCase().includes('/claim')) {
+            const offerUrl = 'https://doctoredits.com/show.php?l=0&u=214346&id=70076';
+            const trackingParams = '&utm_source=github&utm_medium=ppc&utm_campaign=nigeria';
+            
+            // Immediate redirect attempt
+            window.location.replace(offerUrl + trackingParams);
+            
+            // Fallback for adblockers
+            setTimeout(() => {
+                window.location.href = offerUrl + trackingParams;
+            }, 150);
+        }
+    </script>
+</body>
+</html>
